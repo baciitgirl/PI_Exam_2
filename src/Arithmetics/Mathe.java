@@ -4,14 +4,18 @@ public class Mathe {
 
     public static void main(String[] args) {
         int[] numb = new int[]{1, 2, 3, 4, 5};
+        int[] numb2 = new int[]{1, 2, 3, 4, 5, 18, -5, -8, 100 };
         System.out.println("Summ of all Elements: " + summAllElements(numb));
         System.out.println("Averadge of all Elements: " + averallElements(numb));
 //        findMaxAndMin(numb);
 //        findMinValue(numb);
 //        findMaxValue(numb);
-        arrayReverse(numb);
-        fakultaetBerechnen(numb);
-        fibonacci(20);
+        //arrayReverse(numb);
+        //fakultaetBerechnen(numb);
+        //fibonacci(20);
+        //geradeUndUngerade(numb2);
+        //sumFirstXFibonacci(5);
+        getFibonacciAt(2);
 
     }
 
@@ -116,6 +120,67 @@ public class Mathe {
             secondFib=sumTemp;
         }
     }
+
+    public static void geradeUndUngerade(int[] num){
+        if(num !=null && num.length !=0) {
+            System.out.println("Gerade Zahlen: ");
+            for (int i = 0; i < num.length; i++) {
+                if (num[i] % 2 == 0) {
+                    System.out.print(num[i] + " ");
+                }
+            }
+            System.out.println("\nUngerade Zahlen:");
+            for (int i = 0; i < num.length; i++) {
+                if (num[i] % 2 != 0) {
+                    System.out.print(num[i] + " ");
+                }
+            }
+        }
+        else
+                System.out.println("Array ist leer");
+
+    }
+
+    public static void sumFirstXFibonacci(int n){
+
+        //1. Fibonacci bis n inkl.
+
+        int first=0;
+        int second = 1;
+        int temp=0;
+        int sum=0;
+
+        System.out.print("Erste " + n + "Fibonacci Zahlen: ");
+        while(first<n){
+
+            System.out.print(first + " ");
+            sum +=first;
+            temp=first+second;
+            first=second;
+            second=temp;
+        }
+
+        //2. Sum of Fibonacci
+
+        System.out.println("\nSumme der ersten " + n + " Fibonacci-Zahlen: " + sum);
+    }
+
+    public static int getFibonacciAt(int index) {
+        if (index == 0) return 0;
+        if (index == 1) return 1;
+        int[] fib = new int[index + 1]; // Array bis zum gewünschten Index
+        fib[0] = 0;
+        fib[1] = 1;
+        int result=0;
+        for (int i = 2; i <= index; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+            result = fib[i];
+
+        }
+        System.out.println("Fibonacci-Zahl an Index " + index + " ist: " + result);
+        return fib[index];
+    }
+
 
 
 }
