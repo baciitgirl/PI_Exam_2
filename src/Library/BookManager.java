@@ -43,8 +43,7 @@ public void deleteBook(Scanner scan){
      String searchTitleforDelete = scan.nextLine();
         boolean found = false;
         for(int i =0; i< books.length; i++) {
-            if
-            (books[i] != null && books[i].getTitel().equalsIgnoreCase(searchTitleforDelete)) {
+            if(books[i] != null && books[i].getTitel().equalsIgnoreCase(searchTitleforDelete)) {
                 System.out.println("Das Buch mit diesem Titel: " + books[i].getTitel() + " ist gefunden und gelöscht!");
                 System.out.println("Gesuchte Buch " + books[i].getTitel() + " ist gelöscht");
                 books[i] = null;
@@ -55,9 +54,7 @@ public void deleteBook(Scanner scan){
             if(!found){
                 System.out.println("Kein Buch mit diesem Titel gefunden");
             }
-
             printActuallBooks(books);
-
         }
 
 

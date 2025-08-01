@@ -93,12 +93,10 @@ public class Mathe {
     public static void arrayReverse( int[] numb){
         for(int i = numb.length-1; i >= 0; i--){
             System.out.print(numb[i] + " ");
-
         }
     }
 
     public static void fakultaetBerechnen(int [] numb){
-
         int fakult=1;
         if(numb !=null && numb.length!=0){
             for(int i=0; i<numb.length; i++){
@@ -152,16 +150,12 @@ public class Mathe {
 
         System.out.print("Erste " + n + "Fibonacci Zahlen: ");
         while(first<n){
-
             System.out.print(first + " ");
             sum +=first;
             temp=first+second;
             first=second;
             second=temp;
         }
-
-        //2. Sum of Fibonacci
-
         System.out.println("\nSumme der ersten " + n + " Fibonacci-Zahlen: " + sum);
     }
 
@@ -175,12 +169,8 @@ public class Mathe {
         for (int i = 2; i <= index; i++) {
             fib[i] = fib[i - 1] + fib[i - 2];
             result = fib[i];
-
         }
         System.out.println("Fibonacci-Zahl an Index " + index + " ist: " + result);
         return fib[index];
     }
-
-
-
 }

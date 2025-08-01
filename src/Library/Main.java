@@ -37,14 +37,9 @@ static Scanner scan = new Scanner(System.in);
         System.out.println("3. Ein Buch löschen");
         System.out.println("4. Das Programm beenden");
         System.out.println("*************");
-
-
          do{
-
              userChoise = scan.nextInt();
              scan.nextLine();
-
-
              if(userChoise >=1 && userChoise<=4){
                  switch (userChoise){
                      case 1: mbook.searchBook(scan);
